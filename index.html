@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Download Reign - The social media app that rewards you with diamonds!">
-    <meta name="keywords" content="Reign, social media, download, APK, Android, rewards, diamonds, billboard">
+    <meta name="keywords" content="Reign, social media, download, APK, Android, rewards, diamonds, billboard, ads">
     <meta name="author" content="Reign">
     <title>Reign - Social Media APK Download</title>
 
@@ -21,29 +21,37 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #121212; /* Darker background */
+            color: #e0e0e0; /* Lighter text color */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            animation: backgroundAnimation 15s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-color: #121212; }
+            100% { background-color: #1a1a1a; }
         }
 
         .container {
             text-align: center;
-            padding: 30px 10px;
-            background-color: #111;
+            padding: 30px 15px;
+            background-color: #1e1e1e; /* Darker container background */
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             width: 100%;
             max-width: 500px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .container:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 221, 0.7), 0 0 50px rgba(0, 255, 221, 0.7); /* Neon glow */
         }
 
         h1 {
@@ -51,16 +59,29 @@
             font-weight: 700;
             color: #fff;
             margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 221, 0.8); /* Neon text shadow */
+            animation: textAnimation 2s infinite alternate;
+        }
+
+        @keyframes textAnimation {
+            0% { text-shadow: 0 0 10px rgba(0, 255, 221, 0.8); }
+            100% { text-shadow: 0 0 20px rgba(0, 255, 221, 1); }
         }
 
         p {
             font-size: 1.1rem;
             margin-bottom: 25px;
             color: #bbb;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .download-btn {
-            background-color: #fff;
+            background-color: #00ffdd;
             color: #000;
             font-size: 1.1rem;
             font-weight: 600;
@@ -70,53 +91,98 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 255, 221, 0.5);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
         }
 
         .download-btn:hover {
-            background-color: #ddd;
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.5);
+            background-color: #00e6c4;
+            box-shadow: 0 10px 25px rgba(0, 255, 221, 0.7);
             transform: translateY(-3px);
         }
 
-        .reward-section {
+        .reward-section, .billboard, .ads-section {
             margin-top: 30px;
             padding: 20px;
-            background-color: #222;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+            border: 2px solid;
+            transition: box-shadow 0.3s ease;
         }
 
-        .reward-section p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .reward-icon {
-            font-size: 2rem;
-            color: #fff;
-            display: inline-block;
-            margin-right: 10px;
+        .reward-section {
+            background-color: #333;
+            border-color: #ff6f61; /* Neon border color */
+            box-shadow: 0 0 20px rgba(255, 111, 97, 0.7), 0 0 40px rgba(255, 111, 97, 0.7); /* Neon glow */
+            animation: slideIn 2s ease-out;
         }
 
         .billboard {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            background-color: #444;
+            border-color: #8a2be2; /* Neon border color */
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.7), 0 0 40px rgba(138, 43, 226, 0.7); /* Neon glow */
+            animation: slideIn 2s ease-out 0.5s;
         }
 
-        .billboard h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #fff;
+        .ads-section {
+            background-color: #333;
+            border-color: #00ffdd; /* Neon border color */
+            box-shadow: 0 0 20px rgba(0, 255, 221, 0.7), 0 0 40px rgba(0, 255, 221, 0.7); /* Neon glow */
+            animation: slideIn 2s ease-out 1s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reward-icon, .ads-icon, .billboard-icon {
+            display: inline-block;
+            margin-right: 10px;
+            width: 24px; /* Adjust size as needed */
+            height: 24px;
+        }
+
+        .reward-icon img, .ads-icon img, .billboard-icon img {
+            width: 100%;
+            height: 100%;
+            color: whitesmoke;
+        }
+
+        .reward-icon {
+            color: blueviolet;
+        }
+
+        .ads-icon {
+            color: white; /* Ad icon color */
+        }
+
+        .billboard-icon {
+            color: greenyellow; /* Billboard icon color */
         }
 
         footer {
             margin-top: 30px;
             font-size: 0.85rem;
             color: #aaa;
+            text-align: center;
         }
 
         /* Media Queries */
@@ -138,7 +204,7 @@
                 padding: 30px 15px;
             }
 
-            .reward-section, .billboard {
+            .reward-section, .billboard, .ads-section {
                 margin-top: 20px;
                 padding: 15px;
             }
@@ -167,24 +233,36 @@
 <body>
 
     <div class="container">
-        <h1>Welcome to Reign</h1>
-        <p>Download the Reign APK and start connecting with friends, earning rewards, and exploring exclusive content!</p>
+        <h1>Reign: Unleash Your Social Power!</h1>
+        <p>Experience the future of social media with Reign! Connect, share, and earn amazing rewards. Download now and start your adventure!</p>
 
         <!-- Download Button -->
-        <a class="download-btn" href="assets/reign-app.apk" download>Download Reign APK</a>
+        <a class="download-btn" href="assets/reign-app.apk" download>Get the Reign APK</a>
 
         <!-- Rewards Section -->
         <div class="reward-section">
-            <p><span class="reward-icon">💎</span> Earn diamonds by sharing content and engaging with the community!</p>
+            <p><span class="reward-icon">
+                <img src="diamond_icon1.png" alt="Diamond Icon",>
+            </span> Earn dazzling diamonds just by engaging with our vibrant community. Your rewards await!</p>
         </div>
 
         <!-- Billboard Section -->
         <div class="billboard">
-            <h2>Billboard</h2>
-            <p>Check out the latest updates and trending topics here!</p>
+            <h2><span class="billboard-icon">
+                <img src="billboard1.svg" alt="Billboard Icon">
+            </span> Hot Off the Billboard!</h2>
+            <p>Stay updated with the latest trends and top posts. Never miss out on what's buzzing!</p>
         </div>
 
-        <p class="apk-info">Version 1.0.0 | Size: 50MB | Android</p>
+        <!-- Ads Section -->
+        <div class="ads-section">
+            <h2><span class="ads-icon">
+                <img src="ad_icon.svg" alt="Ads Icon">
+            </span> Boost Your Brand</h2>
+            <p>Advertise your products and services within Reign. Connect with a vast audience and elevate your brand!</p>
+        </div>
+
+        <p class="apk-info">Version 1.0.0 | Size: 38MB | Android</p>
     </div>
 
     <footer>&copy; 2024 Reign Social Media. All rights reserved.</footer>
